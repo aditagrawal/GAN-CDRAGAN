@@ -1,0 +1,78 @@
+{
+    "generator_layers": {
+        "input": {
+            "type": "dense",
+            "size": 500,
+            "previous": ""
+        },
+        "layer1": {
+            "type": "dense",
+            "previous": "input",
+            "size": 3000
+        },
+        "layer2": {
+            "type": "relu",
+            "previous": "layer1"
+        },
+        "layer3": {
+            "type": "dense",
+            "previous": "layer2",
+            "size": 3000
+        },
+        "layer4": {
+            "type": "relu",
+            "previous": "layer3"
+        },
+        "output": {
+            "type": "dense",
+            "previous": "layer4"
+        }
+    },
+    "discriminator_layers": {
+        "layer1": {
+            "type": "dense",
+            "previous": "input",
+            "size": 6000
+        },
+        "layer2": {
+            "type": "relu",
+            "previous": "layer1"
+        },
+        "layer3": {
+            "type": "dense",
+            "previous": "layer2",
+            "size": 6000
+        },
+        "layer4": {
+            "type": "relu",
+            "previous": "layer3"
+        },
+        "layer5": {
+            "type": "dense",
+            "previous": "layer4",
+            "size": 1
+        }
+    },
+    "generator_optimizer": "adam",
+    "generator_optimizer_param": {
+        "learning_rate": 0.0001,
+        "beta1": 0.5,
+        "beta2": 0.9
+    },
+    "discriminator_optimizer": "adam",
+    "discriminator_optimizer_param": {
+        "learning_rate": 0.0001,
+        "beta1": 0.5,
+        "beta2": 0.9
+    },
+    "init": "he_normal",
+    "iter": 700000,
+    "warm_start": 0,
+    "batch_size": 512,
+    "num_disc_per_gen": 5,
+    "save_model_iter": 10000,
+    "update_check_size": 1000,
+    "lambd": 10,
+    "subsample": 0.9,
+    "seed": 2394723
+}
