@@ -66,7 +66,7 @@ Replacing missing values
 train = replace_missing_values(train, colNumerical, method='median')
 This method will replace all missing values by median.
 
-# IMPORTANT NOTICE! After you run preprocess_data.py with fit_boxcox parameter set to 1, you should manually review Box-Cox transformed features and correct lambda parameter (setting this parameter to zero means log transformation). After you correct JSON Box-Cox file, you can set fit_boxcox in the settings.json file to zero and run preprocess_data.py again. The method transform will be applied for Box-Cox transformation:
+### IMPORTANT NOTICE! After you run preprocess_data.py with fit_boxcox parameter set to 1, you should manually review Box-Cox transformed features and correct lambda parameter (setting this parameter to zero means log transformation). After you correct JSON Box-Cox file, you can set fit_boxcox in the settings.json file to zero and run preprocess_data.py again. The method transform will be applied for Box-Cox transformation:
 
 bcx = PandasBoxCox(json_file=json_file_boxcox)
 train = bcx.transform(train, colNumerical)
